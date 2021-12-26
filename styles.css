@@ -34,8 +34,11 @@ h1 + p {
   font-weight: 900;
   color: #f18119;
   text-transform: uppercase;
-
   order: -1;
+  margin: 0;
+  padding-top: 3px;
+  border-top: 5px solid #f18119;
+  border-image: linear-gradient(to left, #ff713b, #ffa51d) 1; /* Must put 1  */
 }
 
 h2 {
@@ -65,8 +68,10 @@ strong {
    ================= */
 
 .intro {
+  /* Can blend two background image or linear gradient */
   background-color: #404040; /* Incase the image doesnt load */
-  background-image: url("./images/dark-ribs.jpg");
+  background-image: url("./images/ribs.jpg");
+  background-blend-mode: multiply ; /* multiply keeps dark pixels screen keeps light pixels overlay neutral*/
   background-size: cover;
   background-position: center;
   padding: 0 .5em 2em;
@@ -92,6 +97,58 @@ strong {
   margin-right: auto;
   margin-left: auto;
 }
+
+/* =================
+   form
+   ================= */
+
+.email-collector {
+  width: 80%;
+  max-width: 300px;  
+}
+
+input, .btn {
+  width: 100%;
+  border-radius: 5px;
+}
+
+input {
+  text-align: inherit;
+  font-family: inherit;
+  margin-bottom: .75em;
+  padding: .25em;
+  border: 1px solid #404040;
+  transition: transform .5s;
+}
+
+input:focus {
+  transform: scale(1.1)
+}
+
+.btn {
+  display: inline-block;
+  padding: .8em 1.5em;
+  font-size: 0.625rem;
+  text-transform: uppercase;
+  font-weight: 900;
+  letter-spacing: 1px;
+  border: 0;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background-image: linear-gradient(to left,#ff713b, #ffa51d);
+  color: white;
+  transition: color .5s, transform .5s;
+  transform: scale(1);
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+  color: black;
+  transform: scale(1.1);
+}
+
 
 
 /* =================
